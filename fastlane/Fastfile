@@ -19,9 +19,6 @@ platform :ios do
   desc "Create build"
   lane :build do
       enable_automatic_code_signing
-      #increment_build_number
-      commit_version_bump(message: "Increment build to #{get_build_number} for version #{get_version_number}.",  xcodeproj: "Numero.xcodeproj", force: true)
-      push_to_git_remote
       gym
   end
 end
